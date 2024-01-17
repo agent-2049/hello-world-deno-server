@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "lib": ["deno.window"],
+    "strict": true
+  },
+  "lint": {
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo"],
+      "exclude": []
+    }
+  },
+  "fmt": {
+    "useTabs": true,
+    "lineWidth": 80,
+    "indentWidth": 4,
+    "semiColons": true,
+    "singleQuote": true,
+    "proseWrap": "preserve",
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"]
+  },
+  "lock": false,
+  "nodeModulesDir": true,
+  "test": {
+    "include": ["src/"],
+    "exclude": ["src/testdata/", "data/fixtures/**/*.ts"]
+  },
+  "tasks": {
+    "start": "deno run --allow-net --allow-env --env src/main.ts",
+    "dev": "deno run --allow-net --watch --allow-env --env src/main.ts"
+
+  },
+  "imports": {            
+      "oak": "https://deno.land/x/oak@v12.6.1/mod.ts",      
+      "sqlite": "https://deno.land/x/sqlite/mod.ts",
+      "helloworld": "https://raw.githubusercontent.com/agent-2049/hello-world-deno-lib/main/src/mod.ts"
+  }
+}
+
